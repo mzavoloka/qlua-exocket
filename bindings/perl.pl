@@ -49,8 +49,8 @@ sub session_status {
 say "Session status: ".session_status();
 my $wut = { secclass => 'SPBFUT', seccode => 'SiM5' };
 say "$wut->{seccode} best offer: ".
-    hocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'OFFER').param_value");
+    exocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'OFFER').param_value");
 say "$wut->{seccode} best bid: ".
-    hocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'BID').param_value");
+    exocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'BID').param_value");
 
 1;

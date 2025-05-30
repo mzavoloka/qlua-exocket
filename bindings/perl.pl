@@ -30,8 +30,6 @@ sub exocket($msg) {
     return $reply;
 }
 
-say exocket('exec log("asdf")');
-
 sub session_status {
     my $status_num = exocket('exec session_status()');
     my $status_desc = {
@@ -53,5 +51,7 @@ say "$wut->{seccode} best offer: ".
     exocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'OFFER').param_value");
 say "$wut->{seccode} best bid: ".
     exocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'BID').param_value");
+
+exocket('exec log("asdf")'); # write to exocket's log (should output to /var/log/quik.log)
 
 1;

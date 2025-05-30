@@ -4,9 +4,6 @@ use v5.40;
 use IO::Socket;
 #use JSON::XS qw( decode_json );
 use JSON::PP qw( decode_json ); # use Pure Perl version to reduce dependencies
-use Time::HiRes qw(gettimeofday sleep);
-use DateTime;
-my $tz = DateTime::TimeZone->new(name => 'local');
 
 use Exporter qw( import );
 our @EXPORT_OK = qw( exocket );

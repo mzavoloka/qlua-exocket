@@ -24,7 +24,12 @@ ln -s ~/path-to-qlua-exocket lua
 ```
 perl bindings/perl.pl
 ```
-И увидеть результат в stdout и /var/log/quik.log
+И увидеть примерно такой результат в stdout:
+```
+Session status: основная сессия
+USDRUBF best offer: 78.550000
+USDRUBF best bid: 78.540000
+```
 
 ### Как работает
 Получает по сокету код и исполняет его в pcall(). Святая простота.

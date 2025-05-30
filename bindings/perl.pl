@@ -52,7 +52,7 @@ sub session_status {
 }
 
 say "Session status: ".session_status();
-my $wut = { secclass => 'SPBFUT', seccode => 'SiM5' };
+my $wut = { secclass => 'SPBFUT', seccode => 'USDRUBF' };
 say "$wut->{seccode} best offer: ".
     exocket("exec getParamEx('$wut->{secclass}', '$wut->{seccode}', 'OFFER').param_value");
 say "$wut->{seccode} best bid: ".

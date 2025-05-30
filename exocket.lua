@@ -1,3 +1,4 @@
+package.cpath = [[C:\BCS_Work\QUIK_BCS\lua\rocks\?.dll;]]..package.cpath
 local socket = require 'rocks.socket'
 local json = require 'rocks.dkjson'
 require 'util.log'
@@ -61,6 +62,11 @@ function main()
         client:shutdown('both')
         client:close()
     end
+end
+
+function session_status()
+    local some_fut_status = getParamEx('SPBFUT', 'USDRUBF', 'TRADINGSTATUS')
+    return some_fut_status.param_value
 end
 
 function futlimits()

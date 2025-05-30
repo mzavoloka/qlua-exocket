@@ -25,11 +25,16 @@ sub exocket {
 
     $sock->autoflush(1); # so output gets there right away
     $sock->send("$msg\n") or die "No sent size";
+    $sock->shutdown(SHUT_WR);
     my $buffer = '';
     $sock->recv($buffer, 10*1024*1024); # NOTE might need to increase buffer length
     my $reply = eval { decode_json($buffer) };
+    $sock->shutdown(SHUT_RDWR);
+    $sock->close();
     return $reply;
 }
+
+say exocket('exec log("asdf")');
 
 sub session_status {
     my $status_num = exocket('exec session_status()');
